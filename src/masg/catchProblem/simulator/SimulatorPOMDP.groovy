@@ -64,7 +64,7 @@ class SimulatorPOMDP {
 				belStates[k] = v.initialBelState
 			}
 			
-			CatchRectangularGrid grid = new CatchRectangularGrid(5,5)
+			CatchRectangularGrid grid = new CatchRectangularGrid(2,2)
 			WorldState ws = WorldState.randomState(["apos1","apos2","wpos"],grid)
 			
 			TraceViewer viewer = new TraceViewer()

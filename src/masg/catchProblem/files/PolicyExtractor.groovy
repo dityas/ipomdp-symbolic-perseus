@@ -28,8 +28,14 @@ class PolicyExtractor {
 			
 			List newLeaves = []
 			2.times { collNum ->
-				25.times{ alocNum ->
+				System.out.println(collNum);
+				4.times{ alocNum ->
+					System.out.println("=====================================");
+					System.out.println("belief");
+					nodeCurr.belief.printSpuddDD(System.out);
+					
 					List obs = ["aloc_$alocNum","coll_$collNum"]
+					System.out.println(obs as String[]);
 					PolicyNode nodeNext = new PolicyNode()
 					nodeNext.belief = p.beliefUpdate(nodeCurr.belief,nodeCurr.actId,obs as String[])
 					
@@ -39,7 +45,8 @@ class PolicyExtractor {
 						nodeNext.actId = p.policy[nodeNext.alphaId]
 						newLeaves << nodeNext
 					}
-
+					
+					System.out.println("=====================================\r\n\r\n");
 				}
 			}
 			

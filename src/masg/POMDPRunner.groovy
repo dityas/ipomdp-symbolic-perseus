@@ -23,8 +23,8 @@ class POMDPRunner {
 	public static double explorProb = 0.0;
 	
 	
-	static int width = 5
-	static int height = 5
+	static int width = 2
+	static int height = 2
 	
 	public static void main(String[] args){
 		maxAlphaSetSize = 100
@@ -40,16 +40,16 @@ class POMDPRunner {
 		ps.makeSpuddFile(spuddFileName)
 		
 		POMDPRunner runner = new POMDPRunner()
-		
+//		
 		System.out.println("Solving 1");
 		POMDP solvedPOMDP1 = runner.solveSpuddFile(spuddFileName)
-
+//
 		System.out.println("Solving 2");
 		POMDP solvedPOMDP2 = runner.solveSpuddFile(spuddFileName)
-		
+//		
 		System.out.println("Extracting policy");
 		PolicyExtractor extractor = new PolicyExtractor(solvedPOMDP2)
-		
+//		
 		spuddFileName = "problem_IPOMDPL1.SPUDD"
 		System.out.println("MAKING IPOMDP");
 		IPOMDPNextLevelSpuddFileMaker ps1 = new IPOMDPNextLevelSpuddFileMaker(width,height,solvedPOMDP2,extractor.policyNodes)

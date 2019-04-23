@@ -6,6 +6,8 @@ class Spudder {
 	private final BufferedWriter writer
 	
 	public Spudder(String fileName, Map<String,List<String>> variableValues,Map<String,List<String>> observationValues) {
+//		System.out.println("Variables: " + variableValues);
+//		System.out.println("Obs: " + observationValues);
 		variables = variableValues
 		observations = observationValues
 		outFile = new File(fileName)
@@ -24,7 +26,7 @@ class Spudder {
 			output+=")\r\n"
 		}
 		output += ")"
-		
+
 		writeLine(output)
 	}
 	
